@@ -3,11 +3,22 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+
 trigger:
 - master
 
 pool:
   vmImage: 'ubuntu-latest'
+
+resources:
+  repositories:
+  - repository: adorepob
+    type: github
+    name: mariuszdotnet/ado-repo-b
+    endpoint: string  # name of the service connection to use (for types that aren't Azure Repos)
+    trigger:  # CI trigger for this repository, no CI trigger if skipped (only works for Azure Repos)
+      branches:
+        include: [ string ] # branch names which will trigger a build
 
 steps:
 - script: echo Hello, world!
