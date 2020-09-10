@@ -15,10 +15,10 @@ resources:
   - repository: adorepob
     type: github
     name: mariuszdotnet/ado-repo-b
-    endpoint: string  # name of the service connection to use (for types that aren't Azure Repos)
-    trigger:  # CI trigger for this repository, no CI trigger if skipped (only works for Azure Repos)
+    endpoint: github.com_mariuszdotnet_ado_repo_a_b
+    trigger:
       branches:
-        include: [ string ] # branch names which will trigger a build
+        include: master
 
 steps:
 - script: echo Hello, world!
