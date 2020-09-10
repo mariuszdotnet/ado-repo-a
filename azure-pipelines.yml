@@ -7,6 +7,16 @@
 trigger:
 - none
 
+resources:
+  repositories:
+  - repository: adorepob
+    type: github
+    name: mariuszdotnet/ado-repo-b
+    endpoint: github.com_mariuszdotnet_ado_repo_a_b
+    trigger:
+      branches:
+        include: [master]
+
 pool:
   vmImage: 'ubuntu-latest'
 
